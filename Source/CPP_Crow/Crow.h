@@ -8,6 +8,7 @@
 
 class UCapsuleComponent;
 class USkeletalMeshComponent;
+class UInputMappingContext;
 
 UCLASS()
 class CPP_CROW_API ACrow : public APawn
@@ -23,6 +24,9 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category=Input)
+	UInputMappingContext* CrowMappingContext;
 
 private:
 	UPROPERTY(VisibleAnywhere)
